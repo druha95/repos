@@ -1,0 +1,25 @@
+<table class="table">
+  <thead>
+  <tr>
+    <td>#</td>
+    <td>Favorite</td>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Link</td>
+    <td>Owner</td>
+    <td>Owner name</td>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="item in reposList" ng-class="{'success': checkboxes[item.id]}">
+    <td ng-click="contributorsModal(item)">{{item.id}}</td>
+    <td><input ng-model="checkboxes[item.id]" ng-change="toogleFavorite(item.id)" type="checkbox"/></td>
+    <td ng-click="contributorsModal(item)">{{item.name}}</td>
+    <td ng-click="contributorsModal(item)">{{item.description}}</td>
+    <td><a href="{{item.url}}">Link</a></td>
+    <td ng-click="contributorsModal(item)"><img class="avatar--favorite" ng-src="{{item.owner.avatar_url}}" alt="{{item.owner.login}}"/></td>
+    <td ng-click="contributorsModal(item)">{{item.owner.login}}</td>
+  </tr>
+  </tbody>
+</table>
+
