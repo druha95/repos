@@ -11,4 +11,6 @@ Run bower install
 
 Run `grunt serve` for preview.
 
+google-chrome --disable-web-security
+
 localhost:9000

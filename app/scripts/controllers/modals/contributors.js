@@ -2,6 +2,14 @@
  * Created by andrew on 13.11.15.
  */
 
+/**
+ * @ngdoc function
+ * @name idealsApp.controller.modals:contributorsCtrl
+ * @description
+ * # contributorsCtrl
+ * Controller of the idealsApp which shows
+ * list of contribs in modal
+ */
 
 angular.module('idealsApp')
   .controller('contributorsCtrl', ['$scope', '$uibModalInstance', 'itemData', 'GithubContrib','$window', function($scope, $uibModalInstance, itemData, GithubContrib, $window) {

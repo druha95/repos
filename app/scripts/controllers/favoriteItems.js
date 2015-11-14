@@ -2,13 +2,14 @@
 
 /**
  * @ngdoc function
- * @name idealsApp.controller:AboutCtrl
+ * @name idealsApp.controller:FavoriteListCtrl
  * @description
- * # AboutCtrl
- * Controller of the idealsApp
+ * # FavoriteListCtrl
+ * Controller of the idealsApp which shows
+ * list of favorite
  */
 angular.module('idealsApp')
-  .controller('AboutCtrl', ['$scope', 'GithubRepos', 'FavoriteList', '$uibModal', 'GlobalFunc', '$window', function ($scope, GithubRepos, FavoriteList,
+  .controller('FavoriteListCtrl', ['$scope', 'GithubRepos', 'FavoriteList', '$uibModal', 'GlobalFunc', '$window', function ($scope, GithubRepos, FavoriteList,
                                                                                             $uibModal, GlobalFunc, $window) {
 
     if($window.localStorage.getItem('access_token') == null) {

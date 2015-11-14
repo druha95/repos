@@ -5,7 +5,8 @@
  * @name idealsApp.controller:RepoListCtrl
  * @description
  * # RepoListCtrl
- * Controller of the idealsApp
+ * Controller of the idealsApp, which shows
+ * list of repos
  */
 angular.module('idealsApp')
   .controller('RepoListCtrl', ['$scope', 'GithubRepos', 'FavoriteList', '$window', 'GlobalFunc', function ($scope, GithubRepos,

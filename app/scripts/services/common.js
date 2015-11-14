@@ -4,8 +4,29 @@
 
 
 angular.module('idealsApp')
+
+/**
+ * @ngdoc function
+ * @name idealsApp.services:GlobalFunc
+ * @description
+ * # GlobalFunc
+ * Service of the idealsApp which stores
+ * a common functions
+ * */
+
   .service('GlobalFunc', function() {
     return {
+
+      /**
+       * @ngdoc function
+       * @name idealsApp.services.GlobalFunc:getParamFromLocation
+       * @description
+       * # getParamFromLocation
+       * Function, which parse getParams from location
+       * @param {String} - keys in location
+       * @return {Object} - object of params with keys
+       * */
+
       getParamFromLocation: function() {
         var result = {};
         var tmp = [];
@@ -30,6 +51,16 @@ angular.module('idealsApp')
           return result;
         }
       },
+
+      /**
+       * @ngdoc function
+       * @name idealsApp.services.GlobalFunc:divideParams
+       * @description
+       * # divideParams
+       * Function, which parses key/value string
+       * @param data {String} - key/value string
+       * @return {Object} - object with key=value
+       * */
 
       divideParams: function(data) {
         var tmp ="";

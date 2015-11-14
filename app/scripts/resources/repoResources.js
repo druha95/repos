@@ -5,26 +5,49 @@
 
 angular.module('idealsApp')
 
+/**
+ * @ngdoc function
+ * @name idealsApp.resources:Auth
+ * @description
+ * # Auth
+ * Service of the idealsApp which creates resource for auth
+ * */
+
   .factory("Auth", ['$resource', function($resource) {
-    return $resource("https://github.com/login/oauth/access_token", {action: '@action', second: '@second', third: '@third'}, {
-      get_token: {method:'GET'}
+    return $resource("https://github.com/:action/:second/:third", {action: '@action', second: '@second', third: '@third'}, {
+      get_token: {method:'GET', params: {action:'login', second: 'oauth', third: 'access_token'}}
     }, {
       stripTrailingSlashes: true
     })
   }])
 
+/**
+ * @ngdoc function
+ * @name idealsApp.resources:GithubRepos
+ * @description
+ * # GithubRepos
+ * Service of the idealsApp which creates resource for
+ * getting list of repo
+ * */
+
 
   .factory("GithubRepos", ['$resource', function($resource) {
     return $resource("https://api.github.com/:action/:id", {action: '@action', id: '@id'}, {
-      get_token: {method:'POST', params:{action: 'oauth', id: 'authorize'}},
-
       get_all_repos: {method:'GET', isArray:true,  params:{action: 'repositories'} },
-
       get_one_repo: {method:'GET',  params:{action: 'repositories'} }
     }, {
       stripTrailingSlashes: true
     })
   }])
+
+/**
+ * @ngdoc function
+ * @name idealsApp.resources:GithubContrib
+ * @description
+ * # GithubContrib
+ * Service of the idealsApp which creates resource for
+ * getting list of contribs
+ * */
 
 
   .factory("GithubContrib", ['$resource', function($resource) {

@@ -25,19 +25,25 @@ angular
       .when('/list', {
         templateUrl: '../views/reposList.html',
         controller: 'RepoListCtrl',
-        controllerAs: 'list'
+        controllerAs: 'list',
+        currentTab: 'list'
       })
       .when('/favorite', {
         templateUrl: '../views/favorite.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+        controller: 'FavoriteListCtrl',
+        controllerAs: 'favorite',
+        currentTab: 'favorite'
       })
       .otherwise({
         redirectTo: '/'
       });
   })
+  .run(function($window, $uibModal, $location, Auth , GlobalFunc, $route, $rootScope) {
 
-  .run(function($window, $uibModal, $location, Auth , GlobalFunc) {
+    $rootScope.$on("$routeChangeSuccess", function(currentRoute, previousRoute){
+      $rootScope.activeTab = $route.current.currentTab;
+    });
+
 
 
     if($window.localStorage.getItem('favoriteList')== null){

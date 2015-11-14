@@ -4,6 +4,16 @@
 
 
 angular.module('idealsApp')
+
+/**
+ * @ngdoc function
+ * @name idealsApp.services:FavoriteList
+ * @description
+ * # FavoriteList
+ * Service of the idealsApp which works with
+ * favorite list and local Storage
+ * */
+
   .service("FavoriteList", function($window) {
 
     return {
